@@ -1,7 +1,17 @@
-version: '3' # composeファイルのバーション指定
+version: '3'
+
 services:
-  zock_main:
-    build: . # ビルドに使用するDockerfileがあるディレクトリ指定
-    tty: true # コンテナの起動永続化
+  client:
+    build: ./client
+    ports:
+      - 8080:8080
     volumes:
-      - .:/go/src/work # マウントディレクトリ指定
+      - ./client:/app
+    command: yarn serve
+
+  server:
+    build: ./server
+    ports:
+      - 8888:8888
+    volumes:
+      - ./server:/api
