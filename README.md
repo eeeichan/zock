@@ -8,8 +8,6 @@ ZOZOをハックします。
 
 
 ## 開発環境
-client: localhost:8080
-server: localhost:8000
-serverの場合→ `$ curl localhost:8888`
-
+client: localhost:8080 #ブラウザ確認  
+server: localhost:8000 # `$ curl localhost:8888` で確認  
 
