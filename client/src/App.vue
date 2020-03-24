@@ -1,22 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <SearchSpace></SearchSpace>
     <SearchZozo :items="items"></SearchZozo> <!-- :はv-bindの省略らしい -->
   </div>
 </template>
 
 <script>
 import SearchZozo from './components/SearchZozo.vue'
+import SearchSpace from './components/SearchSpace.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchZozo
+    SearchZozo,
+    SearchSpace
   },
-  // data () { でも問題なかった
-  data: () => {
+  // 変数のスコープが変わってしまうためアロー関数は推奨されなかった。
+  // アロー関数の場合 data: () => {
+  data () {
     return {
       // 仮データ。イメージ。
+      // 後でクラウドのデータ取得してitemsにいれる。
       items: [
         {
           id: 1,
