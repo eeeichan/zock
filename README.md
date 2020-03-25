@@ -9,5 +9,5 @@ ZOZOをハックします。
 
 ## 開発環境
 client: localhost:8080 #ブラウザ確認  
-server: localhost:8000 # `$ curl localhost:8888` で確認  
+server: localhost:8000 # `$ curl localhost:8000` で確認  
 
