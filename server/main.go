@@ -27,7 +27,8 @@ func ExtractItemUrl() {
 	// 検索結果をここで挿入したいが、今のところ決め打ち
 	// ジャンルも絞っていない
 	searchValue := "Maison+Margiela"
-	doc, err := goquery.NewDocument("https://zozo.jp/search/?p_keyv=" + searchValue)
+	zozoSearchUrl := "https://zozo.jp/search/?p_keyv="
+	doc, err := goquery.NewDocument(zozoSearchUrl + searchValue)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -39,7 +40,8 @@ func ExtractItemUrl() {
 	// 各itemのURLは取得OK
 	doc.Find(".catalog-link").Each(func(i int, s *goquery.Selection) {
 		target, _ := s.Attr("href")
-		fmt.Println("https://zozo.jp" + target)
+		zozoUrl := "https://zozo.jp"
+		fmt.Println(zozoUrl + target)
 
 		// fmt.Printf("Title: %s %s\n", s.Find(".caption").Text(), s.Find(".by").Text())
 		// fmt.Printf("%s\n\n", strings.Replace(s.Find(".text").Text(), "\n", "", -1))
